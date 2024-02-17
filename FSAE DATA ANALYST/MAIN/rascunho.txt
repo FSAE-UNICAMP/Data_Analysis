@@ -1,0 +1,46 @@
+fazer programa que corta e abre arquivo para rodar algo
+
+cortar de quando tira o botao do 2 step até quando diminui 80% do tps
+
+padrão de dados 
+
+(selecione o nome do parametro, selecione o valor normal, o valor de alerta vermelho, valor de ok e valor de alerta amarelo.)
+
+botão fazer análise.
+
+1º janela.
+seja bem vindo ao software de analise de dados da fsae unicamp, clique para entrar
+
+2º janela,
+bibliografia, acesso ao github da fsae, fazer analise
+
+3º janela
+entre com o csv
+corte por tempo, corte por 2 step, corte por canal de distância, sem corte.
+
+4º apresentar tipos de análises que podem ser feitas:
+análise de dados vitais
+analise de design 1
+analise de design 2
+analise de design 3
+
+na primeira janela terá uma apresentação, nela estará escrito: "Seja bem vindo ao software de análise de dados da fsae unicamp", terá um botão escrito: "clique para entrar", esse botão levará para segudna janela
+
+na segunda janela terá 3 botões: "bibliografia", "acesso ao github", "fazer análise"
+
+se o usuário clicar em "bibliográfia", fechará a tela atual e irá abrir uma tela onde terá 3 botões: "sagers", "biblioteca 2", "biblioteca 3"
+
+se o usuário clicar em "acesso ao github", fechará a tela atual e irá abrir uma tela com um botão de link: "https://github.com/Rafael-Tobias/FSAE", ao clicar nesse link deve abrir essa url no navegador do usuário
+
+se o usuário clicar em "fazer análise" fechará a tela atual e irá abrir uma tela com um local para pesquisar dentro dos arquvios do próprio computador, estará escrito para este: "Entre com o arquivo .csv"
+logo a baixo nessa mesma tela, terá 4 locais para marcar um e somente uma opção, será uma caixa de seleção, checkbox, com as seguintes opções: "corte por tempo", "corte por botão do 2 step(Arrancada)", "Corte por distância", "sem corte"
+a baixo da caixa de seleção, terá um botão "iniciar análise", que levará para próxima tela
+
+na próxima tela, se o usuário tiver selecionado "corte por tempo", abrirá uma tela com dois espaços para inserir texto, escrito no primeiro espaço: "Entre com início do tempo", no segundo espaço estará escrito: "Entre com o fim do tempo"
+em baixo dessa tela terá um botão escrito próximo "passo", que levará o usuário para uma tela final onde terá botões: "Análise 1", "Analise 2", "Analise 3"
+
+entretanto, se o usuário tiver selecionado "corte por botão do 2 step(Arrancada)" na tela anterior que havia checkbox, já levará o usuário direto para tela com os botões: "Análise 1", "Analise 2", "Analise 3"
+
+se o usuário tiver selecionado "corte por distância" na tela anterior que havia checkbox, já levará o usuário direto para tela com os botões: "Análise 1", "Analise 2", "Analise 3"
+
+se o usuário tiver selecionado "sem corte" na tela anterior que havia checkbox, já levará o usuário direto para tela com os botões: "Análise 1", "Analise 2", "Analise 3"
