@@ -10,7 +10,7 @@ def tela_apresentacao():
         [sg.Text("Seja bem vindo ao software de análise de dados da FSAE Unicamp")],
         [sg.Button("Clique para entrar")]
     ]
-    return sg.Window("Apresentação", layout=layout, finalize=True)
+    return sg.Window("Apresentação", layout=layout, finalize=True, icon="icone_pysimplegui.ico")
 
 def tela_menu():
     sg.theme('SystemDefaultForReal')
@@ -19,7 +19,7 @@ def tela_menu():
         [sg.Button("Acesso ao GitHub")],
         [sg.Button("Fazer Análise")]
     ]
-    return sg.Window("Menu", layout=layout, finalize=True)
+    return sg.Window("Menu", layout=layout, finalize=True, icon="icone_pysimplegui.ico")
 
 def tela_bibliografia():
     sg.theme('SystemDefaultForReal')
@@ -31,13 +31,13 @@ def tela_bibliografia():
         [sg.Button("Biblioteca 3")],
         [sg.Button("Voltar")]
     ]
-    return sg.Window("Bibliografia", layout=layout, finalize=True)
+    return sg.Window("Bibliografia", layout=layout, finalize=True, icon="icone_pysimplegui.ico")
 
 def tela_github():
     webbrowser.open("https://github.com/Rafael-Tobias/FSAE")
     return
 
-def tela_analise():
+def tela_cortes():
     sg.theme('SystemDefaultForReal')
     layout = [
         [sg.Text("Entre com o arquivo .csv")],
@@ -48,7 +48,7 @@ def tela_analise():
          sg.Checkbox("Sem corte", key="sem_corte")],
         [sg.Button("Iniciar Análise"), sg.Button("Voltar")]
     ]
-    return sg.Window("Análise", layout=layout, finalize=True)
+    return sg.Window("Análise", layout=layout, finalize=True, icon="icone_pysimplegui.ico")
 
 def tela_corte_tempo():
     sg.theme('SystemDefaultForReal')
@@ -57,7 +57,7 @@ def tela_corte_tempo():
         [sg.Text("Entre com o fim do tempo"), sg.Input(key="fim_tempo")],
         [sg.Button("Próximo Passo"), sg.Button("Voltar")]
     ]
-    return sg.Window("Corte por Tempo", layout=layout, finalize=True)
+    return sg.Window("Corte por Tempo", layout=layout, finalize=True, icon="icone_pysimplegui.ico")
 
 def tela_obter_valores():
     sg.theme('SystemDefaultForReal')
@@ -66,7 +66,7 @@ def tela_obter_valores():
         [sg.Text("Steer ratio Value: "), sg.Input(key="steer_ratio")],
         [sg.Button("OK")]
     ]
-    return sg.Window("Valores", layout=layout, finalize=True)
+    return sg.Window("Valores", layout=layout, finalize=True, icon="icone_pysimplegui.ico")
 
 def tela_habilitar_gps_ao_log():
     sg.theme('SystemDefaultForReal')
@@ -77,7 +77,7 @@ def tela_habilitar_gps_ao_log():
         [sg.Input(key="arquivo_acelerometro"), sg.FileBrowse()],
         [sg.Button("Ok")]
     ]
-    return sg.Window("Habilitar GPS ao Log", layout=layout, finalize=True)
+    return sg.Window("Habilitar GPS ao Log", layout=layout, finalize=True, icon="icone_pysimplegui.ico")
 
 def tela_final():
     sg.theme('SystemDefaultForReal')
@@ -87,10 +87,10 @@ def tela_final():
         [sg.Button("Habilitar GPS ao Log")],
         [sg.Button("Voltar")]
     ]
-    return sg.Window("Tela Final", layout=layout, finalize=True)
+    return sg.Window("Tela Final", layout=layout, finalize=True, icon="icone_pysimplegui.ico")
 
 # Programa principal
-janelas = [tela_apresentacao, tela_menu, tela_bibliografia, tela_analise, tela_corte_tempo, tela_final]
+janelas = [tela_apresentacao, tela_menu, tela_bibliografia, tela_cortes, tela_corte_tempo, tela_final]
 indice_janela_atual = 0
 pasta_bibliografia = None
 
