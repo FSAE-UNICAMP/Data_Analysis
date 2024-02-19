@@ -1,6 +1,6 @@
 import PySimpleGUI as sg
 import webbrowser
-import cortar_log, bibliotecas, undesteer_caio
+import cortar_log, bibliotecas, undesteer_caio, gps_log
 import os
 
 # Funções de janelas
@@ -68,12 +68,23 @@ def tela_obter_valores():
     ]
     return sg.Window("Valores", layout=layout, finalize=True)
 
+def tela_habilitar_gps_ao_log():
+    sg.theme('SystemDefaultForReal')
+    layout = [
+        [sg.Text("Por favor, adicione o local do arquivo de gps: ")],
+        [sg.Input(key="arquivo_gps"), sg.FileBrowse()],
+        [sg.Text("Por favor, adicione o log de acelerometro: ")],
+        [sg.Input(key="arquivo_acelerometro"), sg.FileBrowse()],
+        [sg.Button("Ok")]
+    ]
+    return sg.Window("Habilitar GPS ao Log", layout=layout, finalize=True)
+
 def tela_final():
     sg.theme('SystemDefaultForReal')
     layout = [
         [sg.Button("Undesteer Angle")],
         [sg.Button("Average Combined G")],
-        [sg.Button("Análise 3")],
+        [sg.Button("Habilitar GPS ao Log")],
         [sg.Button("Voltar")]
     ]
     return sg.Window("Tela Final", layout=layout, finalize=True)
@@ -133,6 +144,19 @@ while True:
             steer_ratio = float(valores["steer_ratio"])
             print(steer_ratio)
             undesteer_caio.caio_analises1(df_filtrado, wheelbase, steer_ratio)
+
+    elif event == "Habilitar GPS ao Log":
+        habilitar_gps_window = tela_habilitar_gps_ao_log()
+        event, valores = habilitar_gps_window.read()
+        habilitar_gps_window.close()
+
+        if event == "Ok":
+            arquivo_log = local_log
+            arquivo_gps = valores["arquivo_gps"]
+            arquivo_acelerometro = valores["arquivo_acelerometro"]
+            df_filtrado = gps_log.sincroniza_gps_ft(arquivo_log, arquivo_gps, arquivo_acelerometro)
+            
+            # Faça algo com os arquivos selecionados, por exemplo, processar ou armazenar
 
     elif event == "Voltar":
         if indice_janela_atual > 0:
