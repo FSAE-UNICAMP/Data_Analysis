@@ -166,3 +166,6 @@ while True:
 
 # Fechando todas as janelas ao sair do loop
 sg.WIN_CLOSED
+
+
+
